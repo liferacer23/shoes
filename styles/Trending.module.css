@@ -1,0 +1,62 @@
+.container {
+  padding: 0.5rem;
+  width: 80%;
+  max-height: 40%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(var(--translate-y, 0));
+  transition: 1s;
+  text-decoration: none;
+  color: black;
+  margin: 1rem auto;
+}
+.header{
+    margin-left: 2rem;
+}
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body .left{
+    position: relative;
+    margin: 0 1rem;
+}
+.body .left button{
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: 0.5s;
+}
+.body .right{
+    position: relative;
+    margin: 0 1rem;
+}
+.body .right button{
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: 0.5s;
+}
+.body .right button:hover{
+    background-color: rgb(201, 196, 190);
+}
+.body .left button:hover{
+    background-color: rgb(201, 196, 190);
+}

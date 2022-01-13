@@ -1,0 +1,74 @@
+.nav_bar{
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    height: 14vh;
+    width: 100%;
+    border-bottom: 1px solid rgb(218, 213, 213);
+    padding: 0 0.5rem;
+  }
+.links{
+  height: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  width: 80%;
+  
+}
+.links .cart{
+  display: flex;
+  align-items: baseline;
+}
+  .links a{
+    transition: 0.6s;
+    margin-top: 3rem;
+    font-weight: 300;
+  }
+  .links a:hover{
+    color:rgb(39, 49, 177)
+    
+  }
+  .nav_bar a {
+    margin-left:0.5rem;
+    text-decoration: none;
+    color: black;
+  }
+  .nav_bar .logo{
+    height: 100%;
+    cursor: pointer;
+  width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+  }
+ 
+.text h1{
+  cursor: pointer;
+  font-weight: 300;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+  width: 100%;
+}
+  .text{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+  }
+  .text h1{
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  color: rgb(96, 99, 98);
+  }
+  .hamburger{
+    display:none
+  }
+  .cart{
+    margin-top: 3rem;
+    cursor: pointer;
+  }
+
+  

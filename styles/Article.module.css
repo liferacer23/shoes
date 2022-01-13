@@ -1,0 +1,28 @@
+.container {
+  padding: 1rem;
+  width: 98%;
+  max-height: 40%;
+  transition: 1s;
+  text-decoration: none;
+  color: black;
+  margin: 1rem auto;
+  text-align: center;
+  transition: 0.8s;
+}
+.header p {
+  text-align: left;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+.article p {
+  margin-bottom: 1rem;
+}
+.article_page {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.article_page a {
+  text-decoration: none;
+  color: black;
+}
