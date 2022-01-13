@@ -14,7 +14,7 @@ export default function Home({ jordans }) {
 }
 
 export const getServerSideProps = async () => {
-  axios.defaults.baseURL = process.env.APP_URL
+  
   const res = await axios.get("/api/jordans");
  
   return {
