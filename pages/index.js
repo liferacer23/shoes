@@ -18,7 +18,8 @@ export default function Home({ jordans }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await axios.get("/api/jordans");
+  const HOST = process.env.APP_URL
+  const res = await axios.get(`${HOST}/api/jordans`);
  
   return {
     props: {
