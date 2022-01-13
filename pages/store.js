@@ -13,7 +13,7 @@ export default function Home({ jordans }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await axios.get("http://localhost:3000/api/jordans");
  
   return {

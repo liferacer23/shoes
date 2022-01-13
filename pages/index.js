@@ -1,5 +1,4 @@
 import axios from "axios";
-import ItemList from "../components/ItemList";
 import Head from "next/head";
 import Featured from "../components/Featured/Featured";
 import Trending from "../components/Trending/Trending";
@@ -18,7 +17,7 @@ export default function Home({ jordans }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await axios.get("http://localhost:3000/api/jordans");
  
   return {
