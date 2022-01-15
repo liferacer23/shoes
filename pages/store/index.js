@@ -1,8 +1,8 @@
 import axios from "axios";
-import ItemList from "../components/ItemList";
+import ItemList from "../../components/ItemList";
 import Head from "next/head";
-import dbConnect from "../util/mongo";
-import Jordan from "../models/Jordan";
+import dbConnect from "../../util/mongo";
+import Jordan from "../../models/Jordan";
 
 
 

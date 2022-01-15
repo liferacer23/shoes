@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div>
       <header className={styles.header}>
-        <span className={styles.allposts}>All Posts</span>
+        <span className={styles.allposts}></span>
         <span className={styles.search}>
           <BsSearch />
         </span>
