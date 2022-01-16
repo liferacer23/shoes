@@ -37,19 +37,26 @@ export default function SelectedJordan({ jordans }) {
                   <input
                     type="radio"
                     id={index}
-                    name="contact"
+                    name="shoe-size"
                     value={price}
                   />
-                  <label htmlFor="contactChoice3">Size {pricerange1}-{pricerange2} {price}$</label>
+                  <label htmlFor={`shoesize${index}`}>Size {pricerange1}-{pricerange2} {price}$</label>
                 </div>
               );
             })}
           </div>
+          <h3>Extra Options</h3>
           {jordans.extraOptions.map((data, index) => {
           return (
-            <div key={index}>
-              <h3>{data.text}</h3>
-              <h3>{data.price}$</h3>
+            <div key={index} className={styles.extraOptions}>
+              <input
+                    type="checkbox"
+                    id={index}
+                    name="contact"
+                    value={data.price}
+                  />
+                  <label htmlFor="contactChoice3">{data.text} {data.price}$</label>
+
             </div>
           );
         })}
