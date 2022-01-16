@@ -1,17 +1,32 @@
 import dbConnect from "../../../util/mongo";
 import Jordan from "../../../models/Jordan";
 import Image from "next/image";
+import styles from "../../../styles/SelectedJordan.module.css";
 export default function SelectedJordan({ jordans }) {
-  
   return (
-    <div>
-      <h1>{jordans.title}</h1>
-      <p>{jordans.description}</p>
-      {jordans.image.map((data, index) => {
-        return <div key={index}>
-            <Image src={data} width={400} height={400}/>
-        </div>;
-      })}
+    <div className={styles.container}>
+      
+        <div className={styles.imageSection}>
+          {jordans.image.map((data, index) => {
+            return (
+              <div className={styles.image}key={index}>
+                <Image src={data} width={350} height={350} />
+              </div>
+            );
+          })}
+        </div>
+      
+      <div className={styles.infoSection}>
+        <h1>{jordans.title}</h1>
+        <p>{jordans.description}</p>
+        {jordans.prices.map((price, index) => {
+          return (
+            <div key={index} className={styles.prices}>
+              <h3>{price}$</h3>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,44 @@
+.container {
+  width: 100vw;
+  height: 35vh;
+  background-color: rgb(41, 40, 40);
+}
+.section {
+    width: 100%;
+    height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+.item li {
+  list-style: none;
+}
+.item a {
+  text-decoration: none;
+  color: white;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.socials a {
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.footer_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  display: block;
+  text-align: center;
+}
