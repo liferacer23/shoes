@@ -17,14 +17,24 @@ export default function SelectedJordan({ jordans }) {
         </div>
       
       <div className={styles.infoSection}>
-        <h1>{jordans.title}</h1>
+        <h1 className={styles.title}>{jordans.title}</h1>
         <p>{jordans.description}</p>
         {jordans.prices.map((price, index) => {
           return (
             <div key={index} className={styles.prices}>
-              <h3>{price}$</h3>
+              <span><p>{price}$</p></span>
             </div>
           );
+        })}
+        <h3>Extra:</h3>
+        {jordans.extraOptions.map((data,index)=>{
+            return (
+              <div>
+                
+                <h3>{data.text}</h3>
+                <h3>{data.price}%</h3>
+              </div>
+              )
         })}
       </div>
     </div>

@@ -15,20 +15,30 @@
   width: 60%;
   flex-wrap: wrap;
 }
-.image{
-    margin-right: 0.5rem;
-    transition: 0.8s;
+.infoSection .title{
+    font-weight:300;
 }
-.image:hover{
-    transform: scale(1.5) translate(80px,0px);;
-    z-index: 999;
+.image {
+  margin-right: 0.5rem;
+  transition: 0.8s;
+}
+.image:hover {
+  transform: scale(1.5) translate(80px, 0px);
+  z-index: 999;
 }
 .infoSection {
   width: 50%;
   height: 100%;
-  background-color: lawngreen;
   padding: 1rem;
-  
 }
-.infoSection h1{text-align: center;}
+.infoSection h1 {
+  text-align: center;
+}
+.infoSection .prices{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
+}
