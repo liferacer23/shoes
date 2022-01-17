@@ -33,6 +33,15 @@
 .infoSection h1 {
   text-align: center;
 }
+.infoSection .size {
+  margin-top: 1rem;
+}
+.infoSection .extraOptionsHeader {
+  margin-top: 1rem;
+}
+.infoSection .quantityHeader {
+  margin-top: 1rem;
+}
 .infoSection .prices label {
   margin-left: 0.5rem;
 }
@@ -40,6 +49,7 @@
   margin-left: 0.5rem;
 }
 .submit {
+  margin-top: 1rem;
   width: 100%;
   height: 7%;
 }
@@ -55,7 +65,12 @@
   border-radius: 1rem;
   transition: 0.8s;
   cursor: pointer;
+  margin-top: 1rem;
 }
-.submit button:hover{
+.submit button:hover {
   background-color: rgb(65, 59, 59);
+}
+.add .quantity{
+  width: 10%;
+  font-weight: 400;
 }

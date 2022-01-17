@@ -25,7 +25,7 @@ export default function SelectedJordan({ jordans }) {
           <h2>Price {shoePrice}$</h2>
           <p>{jordans.description}</p>
 
-          <h3>Please select your size</h3>
+          <h3 className={styles.size}>Please select your size</h3>
           <div>
             {jordans.prices.map((price, index) => {
               let pricerange1 = 6;
@@ -40,24 +40,23 @@ export default function SelectedJordan({ jordans }) {
               return (
                 <div key={index} className={styles.prices}>
                   <input
-
                     checked={shoePrice === price ? "checked" : ""}
                     onChange={() => {
                       setShoePrice(price);
                     }}
                     type="radio"
                     id={index}
-                    name="shoe-size"
+                    name="shoesize"
                     value={price}
                   />
-                  <label htmlFor={`shoesize${index}`}>
-                    Size {pricerange1}-{pricerange2} &ensp; {price}${" "}
+                  <label htmlFor={index}>
+                    Size {pricerange1}-{pricerange2} &ensp; {price}$
                   </label>
                 </div>
               );
             })}
           </div>
-          <h3>Extra Options</h3>
+          <h3 className={styles.extraOptionsHeader}>Extra Options</h3>
           {jordans.extraOptions.map((data, index) => {
             return (
               <div key={index} className={styles.extraOptions}>
@@ -66,16 +65,20 @@ export default function SelectedJordan({ jordans }) {
                     setToggle(!toggle);
                   }}
                   type="checkbox"
-                  id={index}
-                  name="contact"
+                  id="extraOptions"
+                  name="extraOptions"
                   value={data.price}
                 />
-                <label htmlFor="contactChoice3">
+                <label htmlFor="extraOptions">
                   {data.text} {data.price}$
                 </label>
               </div>
             );
           })}
+          <div className={styles.add}>
+            <h3 className={styles.quantityHeader}>Quantity</h3>
+            <input type="number" defaultValue={1} className={styles.quantity} />
+          </div>
           <div className={styles.submit}>
             <button type="submit">Add To Cart</button>
           </div>
