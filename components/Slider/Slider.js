@@ -30,8 +30,7 @@ export default function Slider({ shoes }) {
             key={index2}
             className={
               slideIndex === index2 + 1 ? `${styles.slide} ${styles.active_anim}` : `${styles.slide}`
-            }
-          >
+            }>
             <img alt="shoe" src={res} />
           </div>
              )
