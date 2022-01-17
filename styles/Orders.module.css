@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  padding: 1rem;
+}
+.table {
+  width: 50%;
+  text-align: center;
+}
+.orderId{
+    font-weight: 400;
+}
+.tr th{
+    font-weight: 500;
+}
+.total{
+    font-weight: 400;
+    font-size: 18px;
+}
+.left {
+  flex: 3;
+}
+.right {
+  flex: 1;
+}
+.wrapper {
+  width: 90%;
+  padding: 2rem;
+  max-height: 300px;
+  background-color: rgb(65, 63, 63);
+  color: white;
+  margin-bottom: 3rem;
+}
+.subTotalTextTitle {
+  margin-right: 1rem;
+}
+.discountTextTitle {
+  margin-right: 1rem;
+}
+.totalTextTitle {
+  margin-right: 1rem;
+}
+.button {
+  width: 60%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: rgb(204, 198, 198);
+  color: rgb(11, 116, 28);
+  font-weight: 800;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+  transition: 0.8s;
+  cursor: not-allowed;
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+}
+.done{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.inProgress{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    animation: inProgress 0.8s infinite alternate;
+}
+@keyframes inProgress {
+    from{opacity:0}
+    to{opacity:1}
+}
+.notDone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    opacity:0.5
+}
+
+.inProgress .checkedIcon,.notDone .checkedIcon{
+    display: none;
+}
