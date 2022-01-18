@@ -88,7 +88,7 @@ export default function SelectedJordan({ jordans }) {
   );
 }
 export const getServerSideProps = async ({ params }) => {
-  dbConnect();
+   await dbConnect();
   const id = JSON.parse(JSON.stringify(params));
 
   const jordan = await Jordan.findById(id.id);
