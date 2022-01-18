@@ -7,8 +7,8 @@
     margin: 1rem auto;
   }
   @media screen and (max-width: 700px){
-    .container_slider {
-      margin: 100px 10px 0;
+    .container_slider{
+      margin: 5px auto;
     }
   }
   .slide {
@@ -46,12 +46,12 @@
   }
   .prev {
     top: 50%;
-    left: 15px;
+    left: 1px;
     transform: translateY(-60%);
   }
   .next {
     top: 50%;
-    right: 15px;
+    right: 1px;
     transform: translateY(-60%);
   }
   
