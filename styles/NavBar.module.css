@@ -27,6 +27,7 @@
   margin-left: 0.5rem;
   text-decoration: none;
   color: black;
+  text-transform: uppercase;
 }
 .nav_bar .logo {
   height: 100%;
@@ -42,6 +43,7 @@
   align-items: baseline;
   justify-content: center;
   height: 100%;
+  
 }
 .text h1 {
   text-transform: uppercase;
@@ -79,10 +81,10 @@
   transition: 1s;
 }
 @media screen and (max-width: 1300px) {
-  .nav_bar{height: 11vh;}
+  .nav_bar{height: 12vh;}
 }
 @media screen and (max-width: 926px) {
-  .nav_bar{height: 10vh;}
+  .nav_bar{height: 12vh;}
 }
 @media screen and (max-width: 806px) {
   .nav_bar {
@@ -104,6 +106,7 @@
     width: 100%;
     margin-top: -0.5rem;
     text-align: center;
+
   }
   .nav_bar .logo {
     display: none;
