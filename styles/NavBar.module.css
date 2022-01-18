@@ -81,10 +81,10 @@
   transition: 1s;
 }
 @media screen and (max-width: 1300px) {
-  .nav_bar{height: 12vh;}
+  .nav_bar{height: 14vh;}
 }
-@media screen and (max-width: 926px) {
-  .nav_bar{height: 12vh;}
+@media screen and (max-width: 936px) {
+  .nav_bar{height: 14vh;}
 }
 @media screen and (max-width: 806px) {
   .nav_bar {
