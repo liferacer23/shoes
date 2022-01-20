@@ -9,54 +9,72 @@
   color: black;
   margin: 1rem auto;
 }
-.header{
-    margin-left: 2rem;
+.header {
+  margin-left: 2rem;
 }
-.body{
-    display: flex;
-    align-items: center;
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .left {
+  position: relative;
+  margin: 0 1rem;
+}
+.body .left button {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  width: 100px;
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  transition: 0.5s;
+}
+.body .right {
+  position: relative;
+  margin: 0 1rem;
+}
+.body .right button {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  width: 100px;
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: black;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  transition: 0.5s;
+}
+.body .right button:hover {
+  background-color: rgb(201, 196, 190);
+}
+.body .left button:hover {
+  background-color: rgb(201, 196, 190);
+}
+
+@media screen and (max-width: 780px) {
+  .body {
     justify-content: center;
-}
-.body .left{
-    position: relative;
-    margin: 0 1rem;
-}
-.body .left button{
-    position: absolute;
-    left: 5%;
-    bottom: 5%;
-    width: 100px;
-    height: 30px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: 300;
-    transition: 0.5s;
-}
-.body .right{
-    position: relative;
-    margin: 0 1rem;
-}
-.body .right button{
-    position: absolute;
-    left: 5%;
-    bottom: 5%;
-    width: 100px;
-    height: 30px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: black;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: 300;
-    transition: 0.5s;
-}
-.body .right button:hover{
-    background-color: rgb(201, 196, 190);
-}
-.body .left button:hover{
-    background-color: rgb(201, 196, 190);
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .body .left {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .body .right button {font-size: 0.7rem;}
+  .body .left button {font-size: 0.7rem;}
+  .header {
+    font-size: 0.8rem;
+  }
 }

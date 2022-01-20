@@ -26,3 +26,11 @@
   text-decoration: none;
   color: black;
 }
+@media screen and (max-width: 780px) {
+  .header  {font-size: 0.8rem;}
+  .header p {font-size: 0.7rem;}
+  .article p {
+    font-size: 0.7rem;
+  }
+  .article_page a {font-size: 0.8rem;}
+}
