@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 2rem;
+  padding: 1rem;
   flex-wrap: wrap;
 }
 .itemContainer{
@@ -29,6 +29,7 @@
   color: black;
   margin-right: 1rem;
   margin-bottom: 1rem;
+  border-radius: 1rem;
 }
 .expand{
   text-decoration: none;
@@ -48,7 +49,10 @@
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
   --translate-y: -5px;
 }
-
+.itemContainer .description{
+ 
+  margin-bottom: -4rem;
+}
 @media screen and (max-width:960px){
   .itemContainer{
     width: 45%;
@@ -62,5 +66,9 @@
 @media screen and (max-width:440px){
   .itemContainer{
     width: 100%;
+  }
+  .itemContainer .description{
+    font-size: 0.7rem;
+    margin-bottom: -4rem;
   }
 }

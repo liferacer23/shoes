@@ -18,7 +18,7 @@ export default function ItemList({ jordans }) {
                 </a>
               </div>
               <div className={styles.itemBody}>
-              <p>{data.description}</p>
+              <p className={styles.description}>{data.description}</p>
               <Slider shoes={data} />
               </div>
             </div>
