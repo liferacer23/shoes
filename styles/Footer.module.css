@@ -43,3 +43,25 @@
   font-size: 12px;
   margin-top: 1.3rem;
 }
+
+@media screen and (max-width:768px) {
+  .container{
+    padding: 1rem;
+    font-size: 0.5rem;
+  }
+  .logo{
+    width: 90px;
+    height: 90px;
+  }
+  .socials .social{
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width:500px) {
+  .socials .social{
+   
+   width: 10px;
+   height: 10px;
+  }
+}

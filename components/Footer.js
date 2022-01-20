@@ -27,27 +27,27 @@ export default function Footer() {
       </div>
       <div className={styles.socials}>
         <Link href="/">
-          <a>
+          <a className={styles.social}>
             <Image src="social-icons/linkdin.svg" width={30} height={30} />
           </a>
         </Link>
         <Link href="/">
-          <a>
+          <a className={styles.social}>
             <Image src="social-icons/insta.svg" width={30} height={30} />
           </a>
         </Link>
         <Link href="/">
-          <a>
+          <a className={styles.social}>
             <Image src="social-icons/messenger.svg" width={30} height={30} />
           </a>
         </Link>
         <Link href="/">
-          <a>
+          <a className={styles.social}>
             <Image src="social-icons/twitter.svg" width={30} height={30} />
           </a>
         </Link>
         <Link href="/">
-          <a>
+          <a className={styles.social}>
             <Image src="social-icons/facebook.svg" width={30} height={30} />
           </a>
         </Link>
