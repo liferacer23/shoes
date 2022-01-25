@@ -5,8 +5,18 @@ import Image from "next/image";
 import styles from "../../../styles/SelectedJordan.module.css";
 export default function SelectedJordan({ jordans }) {
   const [shoePrice, setShoePrice] = useState(jordans.prices[0]);
-  // const [extra,setExtra]=useState(jordans.extraOptions[0].price);
+  const [extra, setExtra] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [toggle, setToggle] = useState(false);
+
+  const ExtraHandler = (e) => {
+    if (e.target.checked) {
+      setExtra(parseInt(extra, 10) + parseInt(e.target.value, 10));
+    } else {
+      setExtra(parseInt(extra, 10) - parseInt(e.target.value, 10));
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.imageSection}>
@@ -22,7 +32,12 @@ export default function SelectedJordan({ jordans }) {
       <form className={styles.form}>
         <div className={styles.infoSection}>
           <h1 className={styles.title}>{jordans.title}</h1>
-          <h2>Price {shoePrice}$</h2>
+          <h2>
+            Price{" "}
+            {(parseInt(shoePrice, 10) + parseInt(extra, 10)) *
+              parseInt(quantity, 10)}
+            $
+          </h2>
           <p>{jordans.description}</p>
 
           <h3 className={styles.size}>Please select your size</h3>
@@ -61,6 +76,9 @@ export default function SelectedJordan({ jordans }) {
             return (
               <div key={index} className={styles.extraOptions}>
                 <input
+                  onChange={(e) => {
+                    ExtraHandler(e);
+                  }}
                   onClick={() => {
                     setToggle(!toggle);
                   }}
@@ -77,7 +95,14 @@ export default function SelectedJordan({ jordans }) {
           })}
           <div className={styles.add}>
             <h3 className={styles.quantityHeader}>Quantity</h3>
-            <input type="number" defaultValue={1} className={styles.quantity} />
+            <input
+              onChange={(e) => {
+                setQuantity(e.target.value);
+              }}
+              type="number"
+              defaultValue={1}
+              className={styles.quantity}
+            />
           </div>
           <div className={styles.submit}>
             <button type="submit">Add To Cart</button>
@@ -88,7 +113,7 @@ export default function SelectedJordan({ jordans }) {
   );
 }
 export const getServerSideProps = async ({ params }) => {
-   await dbConnect();
+  await dbConnect();
   const id = JSON.parse(JSON.stringify(params));
 
   const jordan = await Jordan.findById(id.id);
