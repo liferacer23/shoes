@@ -4,7 +4,7 @@ import dbConnect from "../util/mongo";
 import Jordan from "../models/Jordan";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function cart() {
+export default function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   console.log(cart);
