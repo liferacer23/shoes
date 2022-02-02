@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
       </div>
       <div className={styles.footer_bottom}>
-        <h4>&copy;2022 Ethiopia Addiss, Inc All rights reserved</h4>
+        <h4>&copy;2022 Ethiopia Addis Ababa, Inc All rights reserved</h4>
       </div>
     </footer>
   );

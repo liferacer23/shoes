@@ -6,6 +6,11 @@
   width: 100%;
   border-bottom: 1px solid rgb(218, 213, 213);
   padding: 0 0.5rem;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 100;
+  z-index: 1000;
+  background-color: white;
 }
 .links {
   height: 100%;
@@ -63,6 +68,7 @@
   display: none;
 }
 .cart {
+  position: relative;
   cursor: pointer;
   height: 100%;
   display: flex;
@@ -77,6 +83,13 @@
   display: none;
   visibility: hidden;
   transition: 1s;
+}
+.counter{
+position: absolute;
+right:20%;
+top:16%;
+font-weight: bold;
+color: coral;
 }
 @media screen and (min-width: 1300px) {
   .nav_bar {

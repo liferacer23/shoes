@@ -2,21 +2,28 @@ import { useState } from "react";
 import dbConnect from "../../../util/mongo";
 import Jordan from "../../../models/Jordan";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { addShoes } from "../../../redux/cartSlice";
 import styles from "../../../styles/SelectedJordan.module.css";
 export default function SelectedJordan({ jordans }) {
   const [shoePrice, setShoePrice] = useState(jordans.prices[0]);
   const [extra, setExtra] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [toggle, setToggle] = useState(false);
-
-  const ExtraHandler = (e) => {
+  const [extraOptions, setExtraOptions] = useState([]);
+  const dispatch = useDispatch();
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(addShoes({ ...jordans, extraOptions, quantity, shoePrice }));
+  };
+  const ExtraHandler = (e, data) => {
     if (e.target.checked) {
       setExtra(parseInt(extra, 10) + parseInt(e.target.value, 10));
+      setExtraOptions((prev) => [...prev, data]);
     } else {
       setExtra(parseInt(extra, 10) - parseInt(e.target.value, 10));
+      setExtraOptions(extraOptions.filter((extras) => extras._id !== data._id));
     }
   };
-
   return (
     <div className={styles.container}>
       <div className={styles.imageSection}>
@@ -77,10 +84,7 @@ export default function SelectedJordan({ jordans }) {
               <div key={index} className={styles.extraOptions}>
                 <input
                   onChange={(e) => {
-                    ExtraHandler(e);
-                  }}
-                  onClick={() => {
-                    setToggle(!toggle);
+                    ExtraHandler(e, data);
                   }}
                   type="checkbox"
                   id="extraOptions"
@@ -100,12 +104,21 @@ export default function SelectedJordan({ jordans }) {
                 setQuantity(e.target.value);
               }}
               type="number"
+              min="1"
+              max="10"
               defaultValue={1}
               className={styles.quantity}
             />
           </div>
           <div className={styles.submit}>
-            <button type="submit">Add To Cart</button>
+            <button
+              onClick={(e) => {
+                submitHandler(e);
+              }}
+              type="submit"
+            >
+              Add To Cart
+            </button>
           </div>
         </div>
       </form>

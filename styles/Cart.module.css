@@ -3,8 +3,9 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  
 }
-.imageContainer {
+div .imageContainer {
   display: flex;
   flex-direction: column;
 }

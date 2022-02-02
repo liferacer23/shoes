@@ -2,10 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import styles from "../styles/NavBar.module.css";
 const Nav = () => {
 
   const [toggle,setToggle]=useState(false);
+  const quantity = useSelector(state=>state.cart.quantity)
   return (
     <div>
  
@@ -56,12 +58,12 @@ const Nav = () => {
             <a>About Us</a>
           </Link>
         </div>
+        <Link href="/cart">
         <div className={styles.cart}>
-          <Link href="/cart">
             <Image src="/cart.svg" width={45} height={45} />
-          </Link>
+            <div className={styles.counter}>{quantity}</div>
         </div>
-
+        </Link>
       </nav>
     </div>
   );
