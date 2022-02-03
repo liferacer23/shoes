@@ -13,7 +13,7 @@ export default function ItemList({ jordans }) {
             <div key={index} className={styles.itemContainer}>
               <div className={styles.itemHeader}>
                 <h3>{data.title}</h3>
-                <a className={styles.expand} href={`/store/jordans/${data._id}`}>
+                <a className={styles.expand} href={`store/jordans/${data._id}`}>
                   Details
                 </a>
               </div>

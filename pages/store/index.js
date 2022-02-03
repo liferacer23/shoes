@@ -1,10 +1,12 @@
-import axios from "axios";
 import ItemList from "../../components/ItemList";
 import Head from "next/head";
 import dbConnect from "../../util/mongo";
 import Jordan from "../../models/Jordan";
-
+import { useDispatch,useSelector } from "react-redux";
+import { addShoes } from "../../redux/cartSlice";
 export default function Home({ jordans }) {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
   return (
     <div>
       <Head>

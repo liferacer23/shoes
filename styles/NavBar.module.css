@@ -6,11 +6,9 @@
   width: 100%;
   border-bottom: 1px solid rgb(218, 213, 213);
   padding: 0 0.5rem;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 100;
   z-index: 1000;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+  margin-top:-1rem;
 }
 .links {
   height: 100%;

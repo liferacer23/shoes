@@ -11,11 +11,19 @@ export default function SelectedJordan({ jordans }) {
   const [quantity, setQuantity] = useState(1);
   const [extraOptions, setExtraOptions] = useState([]);
   const dispatch = useDispatch();
+
+  /////////////////////////////////////////////////////////////////////////////
+
+  let FinalPrice =  (parseInt(shoePrice, 10) + parseInt(extra, 10)) *
+    `${parseInt(quantity, 10)<1||parseInt(quantity, 10)===0||parseInt(quantity, 10)>10?setQuantity(1):parseInt(quantity, 10)}`
+
+
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(addShoes({ ...jordans, extraOptions, quantity, shoePrice }));
+    dispatch(addShoes({ ...jordans, extraOptions, quantity, FinalPrice }));
   };
   const ExtraHandler = (e, data) => {
+    
     if (e.target.checked) {
       setExtra(parseInt(extra, 10) + parseInt(e.target.value, 10));
       setExtraOptions((prev) => [...prev, data]);
@@ -40,10 +48,7 @@ export default function SelectedJordan({ jordans }) {
         <div className={styles.infoSection}>
           <h1 className={styles.title}>{jordans.title}</h1>
           <h2>
-            Price{" "}
-            {(parseInt(shoePrice, 10) + parseInt(extra, 10)) *
-              parseInt(quantity, 10)}
-            $
+            Price{" "}{FinalPrice}$
           </h2>
           <p>{jordans.description}</p>
 
@@ -101,10 +106,11 @@ export default function SelectedJordan({ jordans }) {
             <h3 className={styles.quantityHeader}>Quantity</h3>
             <input
               onChange={(e) => {
+                if(e.target.value<1){setQuantity(1)}
                 setQuantity(e.target.value);
               }}
               type="number"
-              min="1"
+              min= "1"
               max="10"
               defaultValue={1}
               className={styles.quantity}
