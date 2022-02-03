@@ -1,13 +1,15 @@
-import styles from "../styles/Cart.module.css";
-import Image from "next/image";
 import dbConnect from "../util/mongo";
 import Jordan from "../models/Jordan";
+import styles from "../styles/Cart.module.css";
+import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
+
+
+
 
 export default function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  console.log(cart);
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -20,34 +22,34 @@ export default function Cart() {
             <th>Quantity</th>
             <th>Total</th>
           </tr>
-          
-            {cart.shoes.map((shoe) => {
-              return (
-                <tr>
-                  <td>
-                    <div className={styles.imageContainer}>
-                      <Image src={shoe.image[0]} width={100} height={100} />
-                    </div>
-                  </td>
-                  <td>
-                    <span className={styles.name}>{shoe.title}</span>
-                  </td>
-                  <td>
-                    <span className={styles.extras}>Shoe laces</span>
-                  </td>
-                  <td>
-                    <span className={styles.price}>122$</span>
-                  </td>
-                  <td>
-                    <span className={styles.quantity}>{shoe.quantity}</span>
-                  </td>
-                  <td>
-                    <span className={styles.total}>300$</span>
-                  </td>
-                  </tr>
-              );
-            })}
-          
+
+          {cart.shoes.map((shoe) => {
+            return (
+              <tr>
+                <td>
+                  <div className={styles.imageContainer}>
+                    <Image src={shoe.image[0]} width={100} height={100} />
+                  </div>
+                </td>
+                <td>
+                  <span className={styles.name}>{shoe.title}</span>
+                </td>
+                <td>
+                  <span className={styles.extras}>Shoe laces</span>
+                </td>
+                <td>
+                  <span className={styles.price}>122$</span>
+                </td>
+                <td>
+                  <span className={styles.quantity}>{shoe.quantity}</span>
+                </td>
+                <td>
+                  <span className={styles.total}>300$</span>
+                </td>
+              </tr>
+            );
+          })}
+
         </table>
       </div>
       <div className={styles.right}>
@@ -68,6 +70,7 @@ export default function Cart() {
     </div>
   );
 }
+
 
 export const getServerSideProps = async () => {
   dbConnect();

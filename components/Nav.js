@@ -58,7 +58,7 @@ const Nav = () => {
             <a>About Us</a>
           </Link>
         </div>
-        <Link href="/cart">
+        <Link href="/Cart">
         <div className={styles.cart}>
             <Image src="/cart.svg" width={45} height={45} />
             <div className={styles.counter}>{quantity}</div>
